@@ -1,0 +1,23 @@
+<!--Q Create a button on a webpage and add a click event listener to it. When the button is clicked, display an alert message.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let container = document.getElementById("container");
+        let button = document.createElement("button");
+        button.innerText = "Click Me";
+        container.appendChild(button);
+        button.addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+    </script>
+    
+</body>
+</html>

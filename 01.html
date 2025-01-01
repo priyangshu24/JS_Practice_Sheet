@@ -1,0 +1,35 @@
+<!--Q Change the text of a paragraph on a webpage using JavaScript.--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p id="myParagraph">This is a paragraph</p> 
+
+    <script>
+        // Correct JavaScript to get the element by ID and log it
+        const paragraph = document.getElementById("myParagraph");
+        console.log(paragraph);
+        paragraph.style.color = "red";
+        paragraph.style.fontSize = "20px";
+        paragraph.style.fontWeight = "bold";
+        paragraph.style.textAlign = "center";
+        paragraph.style.backgroundColor = "lightblue";
+        paragraph.style.padding = "10px";
+        paragraph.style.border = "1px solid black";
+        paragraph.style.borderRadius = "5px";
+        paragraph.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.3)";
+        paragraph.style.transition = "all 0.3s ease-in-out";
+        paragraph.addEventListener("mouseover", function() {
+            paragraph.style.transform = "scale(1.1)";
+        });
+        paragraph.addEventListener("mouseout", function() {
+            paragraph.style.transform = "scale(1.0)";
+        }); 
+    </script>
+    </script>
+</body>
+</html>
