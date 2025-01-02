@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo's</title>
+</head>
+<body>
+    <div id="imgContainer"></div>
+    <script>
+        function loadImages() {
+            return new Promise(function(resolve,reject){
+                let img = document.createElement("img");
+                img.src = this;
+                img.onload = function(){
+                    resolve(img);
+                };
+                img.onerror = function(){
+                    reject(new Error("Image not found"));
+                }
+                img.src = src;
+            });
+
+        } 
+        let imgContainer = document.getElementById("imgContainer");
+
+        let imageurls = ["./img/my1.jpeg","./img/my2.jpg","./img/my3.jpg","./img/my4.jpg","./img/my5.jpg"]; 
+
+        Promise.all(imageurls,map(loadImages))
+        </script>
+</body>
+</html>
