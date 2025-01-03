@@ -8,25 +8,29 @@
 <body>
     <div id="imgContainer"></div>
     <script>
-        function loadImages() {
-            return new Promise(function(resolve,reject){
+        function loadImage(src) {
+            return new Promise(function(resolve, reject) {
                 let img = document.createElement("img");
-                img.src = this;
-                img.onload = function(){
+                img.onload = function() {
                     resolve(img);
                 };
-                img.onerror = function(){
+                img.onerror = function() {
                     reject(new Error("Image not found"));
-                }
+                };
                 img.src = src;
             });
+        }
 
-        } 
         let imgContainer = document.getElementById("imgContainer");
+        let imageUrls = ["./img/my1.jpeg", "./img/my2.jpg", "./img/my3.jpg", "./img/my4.jpg", "./img/my5.jpg"];
 
-        let imageurls = ["./img/my1.jpeg","./img/my2.jpg","./img/my3.jpg","./img/my4.jpg","./img/my5.jpg"]; 
-
-        Promise.all(imageurls,map(loadImages))
-        </script>
+        Promise.all(imageUrls.map(loadImage))
+            .then(images => {
+                images.forEach(image => {
+                    imgContainer.appendChild(image);
+                });
+            })
+            .catch(error => console.log(error));
+    </script>
 </body>
 </html>
