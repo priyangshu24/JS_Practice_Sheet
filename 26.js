@@ -1,4 +1,7 @@
-async function makeAPICall(url) {
+//Q. Write a function that makes an API call and handles the response using try and catch blocks.
+console.log("Q. Write a function that makes an API call and handles the response using try and catch blocks.");
+
+  async function makeAPICall(url) {
     try {
       const response = await fetch(url);
       if (!response.ok) {
